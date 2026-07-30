@@ -1,2 +1,5 @@
 __pycache__/
 *.py[cod]
+
+# Local deployment credentials (never commit)
+.env.server.local

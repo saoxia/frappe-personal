@@ -1,0 +1,8 @@
+{
+ "desk_access": 1,
+ "doctype": "Role",
+ "home_page": "",
+ "is_custom": 0,
+ "name": "Health User",
+ "restrict_to_domain": ""
+}

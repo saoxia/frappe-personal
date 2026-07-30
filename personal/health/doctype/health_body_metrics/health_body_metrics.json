@@ -1,27 +1,27 @@
 {
  "actions": [],
- "allow_bulk_edit": 1,
- "allow_rename": 1,
- "autoname": "HBM-.YYYY..MM..DD.-.#",
+ "allow_bulk_edit": 0,
+ "allow_rename": 0,
+ "autoname": "HBM-.YYYY..MM..DD.-.#####",
  "creation": "2026-06-14 08:44:27.733855",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "column_break_cubm",
-  "column_break_hwlh",
+  "section_break_measurements",
   "measurement_time",
-  "section_break_thhe",
   "weight",
-  "body_fat_rercentage",
-  "fat_mass",
-  "column_break_fhuo",
+  "height",
+  "column_break_measurements",
   "bmi",
+  "body_fat_percentage",
+  "fat_mass",
   "basal_metabolic_rate",
-  "section_break_jtce",
+  "section_break_composition",
   "muscle_mass",
   "muscle_percentage",
   "protein_mass",
   "protein_percentage",
+  "column_break_composition",
   "body_water_mass",
   "body_water_percentage",
   "bone_mineral_mass",
@@ -30,12 +30,9 @@
  ],
  "fields": [
   {
-   "fieldname": "column_break_cubm",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_hwlh",
-   "fieldtype": "Column Break"
+   "fieldname": "section_break_measurements",
+   "fieldtype": "Section Break",
+   "label": "Measurements"
   },
   {
    "fieldname": "measurement_time",
@@ -45,93 +42,126 @@
    "reqd": 1
   },
   {
-   "fieldname": "section_break_thhe",
-   "fieldtype": "Section Break"
-  },
-  {
+   "description": "Kilograms (kg)",
    "fieldname": "weight",
    "fieldtype": "Float",
-   "label": "Weight"
+   "in_list_view": 1,
+   "label": "Weight",
+   "precision": 2,
+   "reqd": 1
   },
   {
-   "fieldname": "body_fat_rercentage",
-   "fieldtype": "Percent",
-   "label": "Body Fat Rercentage"
-  },
-  {
-   "fieldname": "fat_mass",
+   "description": "Centimeters (cm)",
+   "fieldname": "height",
    "fieldtype": "Float",
-   "label": "Fat Mass"
+   "label": "Height",
+   "precision": 2,
+   "reqd": 1
   },
   {
-   "fieldname": "column_break_fhuo",
+   "fieldname": "column_break_measurements",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "bmi",
    "fieldtype": "Float",
+   "in_list_view": 1,
    "label": "BMI",
+   "precision": 2,
    "read_only": 1
   },
   {
+   "fieldname": "body_fat_percentage",
+   "fieldtype": "Percent",
+   "label": "Body Fat Percentage",
+   "precision": 2
+  },
+  {
+   "description": "Kilograms (kg)",
+   "fieldname": "fat_mass",
+   "fieldtype": "Float",
+   "label": "Fat Mass",
+   "precision": 2
+  },
+  {
+   "description": "Kilocalories per day (kcal/day)",
    "fieldname": "basal_metabolic_rate",
    "fieldtype": "Int",
    "label": "Basal Metabolic Rate"
   },
   {
-   "fieldname": "section_break_jtce",
-   "fieldtype": "Section Break"
+   "fieldname": "section_break_composition",
+   "fieldtype": "Section Break",
+   "label": "Body Composition"
   },
   {
+   "description": "Kilograms (kg)",
    "fieldname": "muscle_mass",
    "fieldtype": "Float",
-   "label": "Muscle Mass"
+   "label": "Muscle Mass",
+   "precision": 2
   },
   {
    "fieldname": "muscle_percentage",
    "fieldtype": "Percent",
-   "label": "Muscle Percentage"
+   "label": "Muscle Percentage",
+   "precision": 2
   },
   {
+   "description": "Kilograms (kg)",
    "fieldname": "protein_mass",
    "fieldtype": "Float",
-   "label": "Protein Mass"
+   "label": "Protein Mass",
+   "precision": 2
   },
   {
    "fieldname": "protein_percentage",
    "fieldtype": "Percent",
-   "label": "Protein Percentage"
+   "label": "Protein Percentage",
+   "precision": 2
   },
   {
+   "fieldname": "column_break_composition",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Kilograms (kg)",
    "fieldname": "body_water_mass",
    "fieldtype": "Float",
-   "label": "Body Water Mass"
+   "label": "Body Water Mass",
+   "precision": 2
   },
   {
    "fieldname": "body_water_percentage",
    "fieldtype": "Percent",
-   "label": "Body Water Percentage"
+   "label": "Body Water Percentage",
+   "precision": 2
   },
   {
+   "description": "Kilograms (kg)",
    "fieldname": "bone_mineral_mass",
    "fieldtype": "Float",
-   "label": "Bone Mineral Mass"
+   "label": "Bone Mineral Mass",
+   "precision": 2
   },
   {
    "fieldname": "bone_mineral_percentage",
    "fieldtype": "Percent",
-   "label": "Bone Mineral Percentage"
+   "label": "Bone Mineral Percentage",
+   "precision": 2
   },
   {
+   "description": "Kilograms (kg)",
    "fieldname": "skeletal_muscle_mass",
    "fieldtype": "Float",
-   "label": "Skeletal Muscle Mass"
+   "label": "Skeletal Muscle Mass",
+   "precision": 2
   }
  ],
  "grid_page_length": 50,
- "index_web_pages_for_search": 1,
+ "index_web_pages_for_search": 0,
  "links": [],
- "modified": "2026-06-14 09:10:57.547968",
+ "modified": "2026-07-30 18:00:00.000000",
  "modified_by": "Administrator",
  "module": "Health",
  "name": "Health Body Metrics",
@@ -143,17 +173,19 @@
    "delete": 1,
    "email": 1,
    "export": 1,
+   "if_owner": 1,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "System Manager",
-   "share": 1,
+   "role": "Health User",
+   "share": 0,
    "write": 1
   }
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "sort_field": "creation",
+ "sort_field": "measurement_time",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }

@@ -32,10 +32,10 @@ msgstr "基础代谢率"
 msgid "Base Unit"
 msgstr "基础单位"
 
-#. Label of the body_fat_rercentage (Percent) field in DocType 'Health Body
+#. Label of the body_fat_percentage (Percent) field in DocType 'Health Body
 #. Metrics'
 #: personal/health/doctype/health_body_metrics/health_body_metrics.json
-msgid "Body Fat Rercentage"
+msgid "Body Fat Percentage"
 msgstr "体脂率"
 
 #. Label of the body_water_mass (Float) field in DocType 'Health Body Metrics'
@@ -202,8 +202,28 @@ msgstr "补充剂"
 #. Name of a role
 #: personal/health/doctype/health_body_metrics/health_body_metrics.json
 #: personal/health/doctype/health_food_item/health_food_item.json
-msgid "System Manager"
-msgstr ""
+msgid "Health User"
+msgstr "健康用户"
+
+#. Label of the height (Float) field in DocType 'Health Body Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Height"
+msgstr "身高"
+
+#. Label of a section in DocType 'Health Body Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Measurements"
+msgstr "基础测量"
+
+#. Label of a section in DocType 'Health Body Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Body Composition"
+msgstr "身体成分"
+
+#. Label of a section in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Nutrition"
+msgstr "营养成分"
 
 #. Label of the weight (Float) field in DocType 'Health Body Metrics'
 #: personal/health/doctype/health_body_metrics/health_body_metrics.json
