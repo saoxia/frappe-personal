@@ -73,9 +73,9 @@ services:
 
   mcp:
     build:
-      context: ./mcp-sidecar
-    image: personal-mcp:runtime
-    container_name: personal-mcp
+      context: ${FRAPPE_MCP_GATEWAY_PATH:-/srv/frappe-mcp-gateway}
+    image: frappe-mcp-gateway:runtime
+    container_name: frappe-mcp-gateway
     restart: unless-stopped
     env_file:
       - /srv/pip/mcp.env
