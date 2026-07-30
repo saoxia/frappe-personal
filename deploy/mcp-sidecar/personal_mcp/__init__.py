@@ -1,1 +1,0 @@
-"""Personal MCP sidecar."""
