@@ -19,7 +19,6 @@ by Git and must never be committed.
 - MariaDB administrative user: `root`
 - The MariaDB password is stored only in `.env.server.local`.
 - Node binaries: `/home/frappe/.nvm/versions/node/v24.13.0/bin`
-- Pending GitHub deploy key: `/home/frappe/.ssh/frappe_personal_deploy`
 
 ## Operating conventions
 
