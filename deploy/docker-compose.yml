@@ -48,6 +48,7 @@ services:
       ROOT_SSH_PASSWORD: ${PERSONAL_SSH_ROOT_PASSWORD:-}
       PATH: /home/frappe/.local/bin:/home/frappe/.nvm/versions/node/v24.13.0/bin:/home/frappe/frappe-bench/env/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
       PYTHONUNBUFFERED: "1"
+      USE_PROXY: "1"
     ports:
       - "22222:22222"
       - "127.0.0.1:8000:8000"
