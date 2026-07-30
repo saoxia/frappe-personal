@@ -6,7 +6,7 @@ authors = [
 ]
 requires-python = ">=3.14,<3.15"
 dependencies = [
-    "frappe-mcp @ git+https://github.com/frappe/mcp.git@11d5076b1bf4483b2ff6751a13e0736f5396b1e6",
+    "PyJWT~=2.13.0",
 ]
 dynamic = ["version"]
 

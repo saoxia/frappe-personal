@@ -11,3 +11,6 @@ user_data_fields = [
 	{"doctype": "Health Body Metrics", "filter_by": "owner"},
 	{"doctype": "Health Food Item", "filter_by": "owner"},
 ]
+website_route_rules = [
+	{"from_route": "/authorized-apps", "to_route": "authorized_apps"},
+]

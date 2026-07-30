@@ -5,11 +5,11 @@ Docker Compose:
 
 ```sh
 cd /srv/pip
-docker-compose build personal
-docker-compose ps
-docker-compose logs --tail=200
-docker-compose up -d
-docker-compose down
+docker compose build personal mcp
+docker compose up -d
+docker compose ps
+docker compose logs --tail=200
+docker compose down
 ```
 
 Persistent data:
@@ -20,6 +20,7 @@ Persistent data:
 - `/srv/pip/ssh-host-keys`: persistent SSH server host keys.
 - `/srv/pip/redis/data`: Redis RDB/AOF data.
 - `/srv/pip/nginx`: Nginx configuration, certificates, and logs.
+- `/srv/pip/mcp.env`: root-readable MCP sidecar settings and assertion secret.
 - `/srv/pip/backups/current-deployment.sha256`: current deployment
   configuration checksums.
 
@@ -44,6 +45,18 @@ PERSONAL_SSH_FRAPPE_PASSWORD=
 PERSONAL_SSH_ROOT_PASSWORD=
 ```
 
+Create `/srv/pip/mcp.env` from `mcp.env.example`, replace
+`MCP_ASSERTION_SECRET` with a random value of at least 32 characters, and set
+its mode to `0600`. The same secret must be stored as
+`mcp_assertion_secret` in the Frappe site configuration.
+
+The standalone MCP endpoint is `https://pip.lly.info/mcp`. It validates the
+client's Frappe OAuth token on every request and requires the `openid` and
+`personal:mcp` scopes. It calls Frappe with a one-time, 60-second internal
+assertion instead of forwarding the OAuth token. Users can revoke OAuth access
+at `https://pip.lly.info/authorized-apps`; a revoked token is rejected on the
+next MCP request.
+
 Published ports:
 
 - `80` and `443`: Nginx.
@@ -51,3 +64,5 @@ Published ports:
 - `127.0.0.1:8000`: Frappe web, available only on the server.
 - `127.0.0.1:9000`: Socket.IO, available only on the server.
 - `127.0.0.1:6379`: Redis, available only on the server.
+- `127.0.0.1:8100`: MCP sidecar, available only on the server; Nginx exposes
+  `/mcp`.
