@@ -73,12 +73,17 @@ class TestHealthBodyMetricsMCP(IntegrationTestCase):
 		return create_health_body_metrics(**values)
 
 	def _create_health_user(self, email):
-		user = frappe.get_doc(
-			doctype="User",
-			email=email,
-			first_name="Health",
-			last_name="MCP",
-			send_welcome_email=0,
-		).insert(ignore_permissions=True)
-		user.add_roles("Health User")
+		if frappe.db.exists("User", email):
+			user = frappe.get_doc("User", email)
+		else:
+			user = frappe.get_doc(
+				doctype="User",
+				email=email,
+				first_name="Health",
+				last_name="MCP",
+				send_welcome_email=0,
+			).insert(ignore_permissions=True)
+
+		if "Health User" not in frappe.get_roles(user.name):
+			user.add_roles("Health User")
 		return user
