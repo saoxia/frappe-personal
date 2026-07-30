@@ -1,0 +1,89 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container py-5">
+	<div class="mb-4">
+		<h1>{{ _("Authorized Apps") }}</h1>
+		<p class="text-muted">
+			{{ _("Review and revoke applications that can access your Personal account.") }}
+		</p>
+	</div>
+
+	{% if is_guest %}
+	<div class="alert alert-info">
+		{{ _("Please log in to manage your authorized applications.") }}
+	</div>
+	<a class="btn btn-primary" href="/login?redirect-to=/authorized-apps">
+		{{ _("Log in") }}
+	</a>
+	{% elif authorizations %}
+	<div class="list-group">
+		{% for authorization in authorizations %}
+		<div class="list-group-item py-4">
+			<div class="d-flex flex-wrap justify-content-between gap-3">
+				<div>
+					<h3 class="h5 mb-2">{{ authorization.app_name }}</h3>
+					<p class="mb-1 text-muted">
+						{{ _("Authorized on") }}:
+						{{ authorization.authorized_on_display }}
+					</p>
+					<p class="mb-1 text-muted">
+						{{ _("Expires on") }}:
+						{{ authorization.expires_at_display }}
+					</p>
+					<p class="mb-0">
+						<strong>{{ _("Permissions") }}:</strong>
+						{{ authorization.scopes | join(", ") }}
+					</p>
+				</div>
+				<div>
+					<button
+						class="btn btn-danger btn-sm revoke-authorization"
+						data-client-id="{{ authorization.client_id | e }}"
+						data-app-name="{{ authorization.app_name | e }}"
+						type="button"
+					>
+						{{ _("Revoke access") }}
+					</button>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	{% else %}
+	<div class="alert alert-secondary">
+		{{ _("No applications currently have access to your account.") }}
+	</div>
+	{% endif %}
+</div>
+
+{% if not is_guest %}
+<script>
+document.querySelectorAll(".revoke-authorization").forEach((button) => {
+	button.addEventListener("click", () => {
+		const appName = button.dataset.appName;
+		const clientId = button.dataset.clientId;
+
+		frappe.confirm(
+			`{{ _("Revoke access for") }} ${appName}?`,
+			() => {
+				frappe.call({
+					method: "personal.oauth_authorizations.revoke_authorization",
+					type: "POST",
+					args: { client_id: clientId },
+					freeze: true,
+					freeze_message: "{{ _("Revoking access...") }}",
+				}).then(() => {
+					frappe.show_alert({
+						message: "{{ _("Access revoked") }}",
+						indicator: "green",
+					});
+					window.location.reload();
+				});
+			},
+		);
+	});
+});
+</script>
+{% endif %}
+{% endblock %}

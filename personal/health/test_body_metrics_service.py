@@ -1,15 +1,15 @@
 import frappe
 from frappe.tests import IntegrationTestCase
 
-from personal.health.mcp_tools import (
+from personal.health.body_metrics_service import (
 	create_health_body_metrics,
 	get_health_body_metrics,
 )
 
 
-class TestHealthBodyMetricsMCP(IntegrationTestCase):
+class TestBodyMetricsService(IntegrationTestCase):
 	def setUp(self):
-		self.user = self._create_health_user("health-mcp@example.com")
+		self.user = self._create_health_user("health-service@example.com")
 		frappe.set_user(self.user.name)
 
 	def tearDown(self):
@@ -54,7 +54,7 @@ class TestHealthBodyMetricsMCP(IntegrationTestCase):
 		own_record = self._create_metrics()["name"]
 
 		frappe.set_user("Administrator")
-		other_user = self._create_health_user("health-mcp-other@example.com")
+		other_user = self._create_health_user("health-service-other@example.com")
 		frappe.set_user(other_user.name)
 		other_record = self._create_metrics()["name"]
 
@@ -82,7 +82,7 @@ class TestHealthBodyMetricsMCP(IntegrationTestCase):
 				doctype="User",
 				email=email,
 				first_name="Health",
-				last_name="MCP",
+				last_name="Service",
 				send_welcome_email=0,
 			).insert(ignore_permissions=True)
 
