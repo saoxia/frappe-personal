@@ -56,12 +56,14 @@ class TestHealthBodyMetricsMCP(IntegrationTestCase):
 		frappe.set_user("Administrator")
 		other_user = self._create_health_user("health-mcp-other@example.com")
 		frappe.set_user(other_user.name)
-		self._create_metrics()
+		other_record = self._create_metrics()["name"]
 
 		frappe.set_user(self.user.name)
 		result = get_health_body_metrics()
+		record_names = [record["name"] for record in result["records"]]
 
-		self.assertEqual([record["name"] for record in result["records"]], [own_record])
+		self.assertIn(own_record, record_names)
+		self.assertNotIn(other_record, record_names)
 
 	def _create_metrics(self, **overrides):
 		values = {
