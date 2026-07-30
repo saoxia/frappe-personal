@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "field:food_name",
+ "creation": "2026-06-14 05:56:31.791014",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "food_name",
+  "category",
+  "base_unit",
+  "protein",
+  "fat",
+  "carbohydrate",
+  "calories",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "Leafy Greens\nColored Vegetables\nCruciferous Vegetables\nSoy Products\nMeat\nSeafood\nFruits\nNuts\nStaples\nSupplements",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "base_unit",
+   "fieldtype": "Data",
+   "label": "Base Unit"
+  },
+  {
+   "fieldname": "protein",
+   "fieldtype": "Float",
+   "label": "Protein"
+  },
+  {
+   "fieldname": "fat",
+   "fieldtype": "Float",
+   "label": "Fat"
+  },
+  {
+   "fieldname": "carbohydrate",
+   "fieldtype": "Float",
+   "label": "Carbohydrate"
+  },
+  {
+   "fieldname": "calories",
+   "fieldtype": "Float",
+   "label": "Calories",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes",
+   "options": "\u8089\u7c7b\n\u6c34\u4ea7\n\u852c\u83dc\n\u5341\u5b57\u82b1\u79d1\n\u6c34\u679c\n\u575a\u679c\n\u4e3b\u98df\n\u8c46\u5236\u54c1\n\u8c03\u5473\u54c1"
+  },
+  {
+   "fieldname": "food_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Food Name",
+   "reqd": 1,
+   "search_index": 1,
+   "unique": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-14 08:39:23.532692",
+ "modified_by": "Administrator",
+ "module": "Health",
+ "name": "Health Food Item",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

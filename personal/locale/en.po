@@ -1,0 +1,211 @@
+# Translations template for Personal.
+# Copyright (C) 2026 Personal
+# This file is distributed under the same license as the Personal project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Personal VERSION\n"
+"Report-Msgid-Bugs-To: lingyu_li@foxmail.com\n"
+"POT-Creation-Date: 2026-07-30 15:43+0806\n"
+"PO-Revision-Date: 2026-07-30 15:43+0806\n"
+"Last-Translator: lingyu_li@foxmail.com\n"
+"Language-Team: lingyu_li@foxmail.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#. Label of the bmi (Float) field in DocType 'Health Body Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "BMI"
+msgstr ""
+
+#. Label of the basal_metabolic_rate (Int) field in DocType 'Health Body
+#. Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Basal Metabolic Rate"
+msgstr ""
+
+#. Label of the base_unit (Data) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Base Unit"
+msgstr ""
+
+#. Label of the body_fat_rercentage (Percent) field in DocType 'Health Body
+#. Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Body Fat Rercentage"
+msgstr "Body Fat Percentage"
+
+#. Label of the body_water_mass (Float) field in DocType 'Health Body Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Body Water Mass"
+msgstr ""
+
+#. Label of the body_water_percentage (Percent) field in DocType 'Health Body
+#. Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Body Water Percentage"
+msgstr ""
+
+#. Label of the bone_mineral_mass (Float) field in DocType 'Health Body
+#. Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Bone Mineral Mass"
+msgstr ""
+
+#. Label of the bone_mineral_percentage (Percent) field in DocType 'Health Body
+#. Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Bone Mineral Percentage"
+msgstr ""
+
+#. Label of the calories (Float) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Calories"
+msgstr ""
+
+#. Label of the carbohydrate (Float) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Carbohydrate"
+msgstr ""
+
+#. Label of the category (Select) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Category"
+msgstr ""
+
+#. Option for the 'Category' (Select) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Colored Vegetables"
+msgstr ""
+
+#. Option for the 'Category' (Select) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Cruciferous Vegetables"
+msgstr ""
+
+#. Label of the fat (Float) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Fat"
+msgstr ""
+
+#. Label of the fat_mass (Float) field in DocType 'Health Body Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Fat Mass"
+msgstr ""
+
+#. Label of the food_name (Data) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Food Name"
+msgstr ""
+
+#. Option for the 'Category' (Select) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Fruits"
+msgstr ""
+
+#: personal/health/__init__.py:5
+msgid "Health"
+msgstr ""
+
+#. Name of a DocType
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Health Body Metrics"
+msgstr "Body Metrics"
+
+#. Name of a DocType
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Health Food Item"
+msgstr "Food Item"
+
+#. Option for the 'Category' (Select) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Leafy Greens"
+msgstr ""
+
+#. Label of the measurement_time (Datetime) field in DocType 'Health Body
+#. Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Measurement Time"
+msgstr ""
+
+#. Option for the 'Category' (Select) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Meat"
+msgstr ""
+
+#. Label of the muscle_mass (Float) field in DocType 'Health Body Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Muscle Mass"
+msgstr ""
+
+#. Label of the muscle_percentage (Percent) field in DocType 'Health Body
+#. Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Muscle Percentage"
+msgstr ""
+
+#. Label of the notes (Small Text) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Notes"
+msgstr ""
+
+#. Option for the 'Category' (Select) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Nuts"
+msgstr ""
+
+#. Label of the protein (Float) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Protein"
+msgstr ""
+
+#. Label of the protein_mass (Float) field in DocType 'Health Body Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Protein Mass"
+msgstr ""
+
+#. Label of the protein_percentage (Percent) field in DocType 'Health Body
+#. Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Protein Percentage"
+msgstr ""
+
+#. Option for the 'Category' (Select) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Seafood"
+msgstr ""
+
+#. Label of the skeletal_muscle_mass (Float) field in DocType 'Health Body
+#. Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Skeletal Muscle Mass"
+msgstr ""
+
+#. Option for the 'Category' (Select) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Soy Products"
+msgstr ""
+
+#. Option for the 'Category' (Select) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Staples"
+msgstr ""
+
+#. Option for the 'Category' (Select) field in DocType 'Health Food Item'
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "Supplements"
+msgstr ""
+
+#. Name of a role
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+#: personal/health/doctype/health_food_item/health_food_item.json
+msgid "System Manager"
+msgstr ""
+
+#. Label of the weight (Float) field in DocType 'Health Body Metrics'
+#: personal/health/doctype/health_body_metrics/health_body_metrics.json
+msgid "Weight"
+msgstr ""

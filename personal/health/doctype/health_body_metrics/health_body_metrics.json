@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "HBM-.YYYY..MM..DD.-.#",
+ "creation": "2026-06-14 08:44:27.733855",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "column_break_cubm",
+  "column_break_hwlh",
+  "measurement_time",
+  "section_break_thhe",
+  "weight",
+  "body_fat_rercentage",
+  "fat_mass",
+  "column_break_fhuo",
+  "bmi",
+  "basal_metabolic_rate",
+  "section_break_jtce",
+  "muscle_mass",
+  "muscle_percentage",
+  "protein_mass",
+  "protein_percentage",
+  "body_water_mass",
+  "body_water_percentage",
+  "bone_mineral_mass",
+  "bone_mineral_percentage",
+  "skeletal_muscle_mass"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_cubm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hwlh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "measurement_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Measurement Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_thhe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "body_fat_rercentage",
+   "fieldtype": "Percent",
+   "label": "Body Fat Rercentage"
+  },
+  {
+   "fieldname": "fat_mass",
+   "fieldtype": "Float",
+   "label": "Fat Mass"
+  },
+  {
+   "fieldname": "column_break_fhuo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bmi",
+   "fieldtype": "Float",
+   "label": "BMI",
+   "read_only": 1
+  },
+  {
+   "fieldname": "basal_metabolic_rate",
+   "fieldtype": "Int",
+   "label": "Basal Metabolic Rate"
+  },
+  {
+   "fieldname": "section_break_jtce",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "muscle_mass",
+   "fieldtype": "Float",
+   "label": "Muscle Mass"
+  },
+  {
+   "fieldname": "muscle_percentage",
+   "fieldtype": "Percent",
+   "label": "Muscle Percentage"
+  },
+  {
+   "fieldname": "protein_mass",
+   "fieldtype": "Float",
+   "label": "Protein Mass"
+  },
+  {
+   "fieldname": "protein_percentage",
+   "fieldtype": "Percent",
+   "label": "Protein Percentage"
+  },
+  {
+   "fieldname": "body_water_mass",
+   "fieldtype": "Float",
+   "label": "Body Water Mass"
+  },
+  {
+   "fieldname": "body_water_percentage",
+   "fieldtype": "Percent",
+   "label": "Body Water Percentage"
+  },
+  {
+   "fieldname": "bone_mineral_mass",
+   "fieldtype": "Float",
+   "label": "Bone Mineral Mass"
+  },
+  {
+   "fieldname": "bone_mineral_percentage",
+   "fieldtype": "Percent",
+   "label": "Bone Mineral Percentage"
+  },
+  {
+   "fieldname": "skeletal_muscle_mass",
+   "fieldtype": "Float",
+   "label": "Skeletal Muscle Mass"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-14 09:10:57.547968",
+ "modified_by": "Administrator",
+ "module": "Health",
+ "name": "Health Body Metrics",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
