@@ -9,10 +9,14 @@
  "field_order": [
   "section_break_measurements",
   "measurement_time",
+  "measurement_time_is_estimated",
   "weight",
   "height",
   "column_break_measurements",
   "bmi",
+  "source",
+  "client_request_id",
+  "client_request_key",
   "body_fat_percentage",
   "fat_mass",
   "basal_metabolic_rate",
@@ -42,6 +46,14 @@
    "reqd": 1
   },
   {
+   "default": "0",
+   "description": "Enabled when the source only provided a date or an approximate time.",
+   "fieldname": "measurement_time_is_estimated",
+   "fieldtype": "Check",
+   "label": "Measurement Time Is Estimated",
+   "read_only": 1
+  },
+  {
    "description": "Kilograms (kg)",
    "fieldname": "weight",
    "fieldtype": "Float",
@@ -69,6 +81,30 @@
    "label": "BMI",
    "precision": 2,
    "read_only": 1
+  },
+  {
+   "default": "Manual",
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "Manual\nMCP\nImage Import",
+   "read_only": 1
+  },
+  {
+   "fieldname": "client_request_id",
+   "fieldtype": "Data",
+   "label": "Client Request ID",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "client_request_key",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Client Request Key",
+   "no_copy": 1,
+   "read_only": 1,
+   "unique": 1
   },
   {
    "fieldname": "body_fat_percentage",
