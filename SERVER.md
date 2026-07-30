@@ -17,6 +17,8 @@ by Git and must never be committed.
 - Site database: `pip`
 - Site database host: `10.8.0.16:3306`
 - MariaDB application user: `default`
+- The recorded `default` credentials are currently rejected by MariaDB; use
+  site-scoped Bench database commands until the database grants are corrected.
 - Node binaries: `/home/frappe/.nvm/versions/node/v24.13.0/bin`
 - Pending GitHub deploy key: `/home/frappe/.ssh/frappe_personal_deploy`
 
