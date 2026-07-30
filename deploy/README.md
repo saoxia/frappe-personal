@@ -21,6 +21,7 @@ Persistent data:
 - `/srv/pip/redis/data`: Redis RDB/AOF data.
 - `/srv/pip/nginx`: Nginx configuration, certificates, and logs.
 - `/srv/pip/mcp.env`: root-readable MCP sidecar settings and assertion secret.
+- `/srv/frappe-mcp-gateway`: independent checkout of the MCP gateway.
 - `/srv/pip/backups/current-deployment.sha256`: current deployment
   configuration checksums.
 
@@ -45,17 +46,26 @@ PERSONAL_SSH_FRAPPE_PASSWORD=
 PERSONAL_SSH_ROOT_PASSWORD=
 ```
 
-Create `/srv/pip/mcp.env` from `mcp.env.example`, replace
+Clone the independent gateway repository before building the stack:
+
+```sh
+git clone https://github.com/saoxia/frappe-mcp-gateway.git \
+  /srv/frappe-mcp-gateway
+```
+
+Create `/srv/pip/mcp.env` from the gateway repository's `.env.example`, replace
 `MCP_ASSERTION_SECRET` with a random value of at least 32 characters, and set
 its mode to `0600`. The same secret must be stored as
 `mcp_assertion_secret` in the Frappe site configuration.
 
-The standalone MCP endpoint is `https://pip.lly.info/mcp`. It validates the
-client's Frappe OAuth token on every request and requires the `openid` and
-`personal:mcp` scopes. It calls Frappe with a one-time, 60-second internal
-assertion instead of forwarding the OAuth token. Users can revoke OAuth access
-at `https://pip.lly.info/authorized-apps`; a revoked token is rejected on the
-next MCP request.
+The standalone gateway source is maintained at
+[`saoxia/frappe-mcp-gateway`](https://github.com/saoxia/frappe-mcp-gateway).
+Its endpoint is `https://pip.lly.info/mcp`. It validates the client's Frappe
+OAuth token on every request and requires the `openid` and `personal:mcp`
+scopes. It calls Frappe with a one-time, 60-second internal assertion instead
+of forwarding the OAuth token. Users can revoke OAuth access at
+`https://pip.lly.info/authorized-apps`; a revoked token is rejected on the next
+MCP request.
 
 Published ports:
 
