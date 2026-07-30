@@ -1,0 +1,12 @@
+Port 22222
+HostKey /etc/ssh/host-keys/ssh_host_rsa_key
+HostKey /etc/ssh/host-keys/ssh_host_ecdsa_key
+HostKey /etc/ssh/host-keys/ssh_host_ed25519_key
+
+PermitRootLogin yes
+PermitEmptyPasswords no
+PasswordAuthentication yes
+PubkeyAuthentication yes
+KbdInteractiveAuthentication no
+UseDNS no
+X11Forwarding no
